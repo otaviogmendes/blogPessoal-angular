@@ -8,9 +8,12 @@ import { Postagem } from '../model/Postagem';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit {
+  
+key = 'data'
+reverse = true
 
   listaPostagens: Postagem []
-  postagem:Postagem = new Postagem
+  postagem: Postagem = new Postagem
 
 // injeção de dependencias
   constructor(private postagemService: PostagemService) { }
