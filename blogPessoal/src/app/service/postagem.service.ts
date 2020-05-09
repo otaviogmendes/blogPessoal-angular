@@ -12,7 +12,7 @@ export class PostagemService {
 
   /* 
   
-  CRUD - Create = get, Ready = post, Update = put e Delete = delete
+  CRUD - Create = get, Read = post, Update = put e Delete = delete
   */
 
   // importar modulo de HTTP
@@ -26,6 +26,14 @@ postPostagem(postagem: Postagem){
   return this.http.post('http://31.220.57.14:8080/postagens', postagem)
 }
 
+putPostagem(postagem: Postagem)
+{
+  return this.http.put('http://31.220.57.14:8080/postagens', postagem)
+}
 
+getByIdPostagem(id:number)
+{
+  return this.http.get(`http://31.220.57.14:8080/postagens/${id}`)
+}
 
 }
