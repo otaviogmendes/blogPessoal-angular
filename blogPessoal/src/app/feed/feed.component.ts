@@ -10,6 +10,7 @@ import { Postagem } from '../model/Postagem';
 export class FeedComponent implements OnInit {
 
   listaPostagens: Postagem []
+  postagem:Postagem = new Postagem
 
 // injeção de dependencias
   constructor(private postagemService: PostagemService) { }
@@ -22,4 +23,12 @@ export class FeedComponent implements OnInit {
   {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[])=> {this.listaPostagens = resp})
   }
+
+publicar()
+{
+  this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{this.postagem = resp
+  location.assign('/feed')
+})
+}
+
 }

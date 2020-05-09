@@ -35,17 +35,18 @@
 
                 <div class="form-group">
                     <label for="" class="text-monospace">Titulo</label>
-                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Digite o titulo">
+                    <input type="text" name="titulo" id="titulo" class="form-control"
+                     placeholder="Digite o titulo" [(ngModel)]="postagem.titulo">
                 </div>
 
                 <div class="form-group">
                     <label for="texto" class="text-monospace">Mensagem:</label>
                     <textarea name="texto" id="texto" cols="30" rows="4" class="form-control"
-                        placeholder="Digite sua mensagem"></textarea>
+                        placeholder="Digite sua mensagem" [(ngModel)]="postagem.texto"></textarea>
                 </div>
 
                 <div class=" d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-dark w-25">Publicar</button>
+                    <button type="button" class="btn btn-outline-dark w-25" (click)="publicar()">Publicar</button>
                 </div>
 
             </div>
@@ -55,7 +56,7 @@
 
             <div class="card mb-4" *ngfor="let postagem of listaPostagens">
                 <div class="card-header">
-                   <h5 class="card-title">{{postagem.titulo}}</h5> 
+                   <h5 class="card-title">{{postagem.titulo}}</h5>                  
                 </div>
                 <div class="card-body">
                    <p class="card-text"> {{postagem.texto}}</p>
